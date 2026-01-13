@@ -42,7 +42,7 @@ public class ConsoleController {
 
             switch (choice) {
                 case "1" -> runEx1();
-//                case "2" -> runEx2();
+                case "2" -> runEx2();
 //                case "3" -> runEx3();
 //                case "4" -> runEx4();
 //                case "5" -> runEx5();
@@ -68,6 +68,18 @@ public class ConsoleController {
         for (Driver driver : drivers) {
 
             System.out.println(driver);}
+    }
+
+    private void runEx2() {
+
+        System.out.println("\n--- Ex 2 ---");
+        String team = scanner.nextLine();
+        List<Driver> filteredDrivers = driverService.filterByTeamAndStatus(team);
+
+        for (Driver driver : filteredDrivers) {
+            System.out.println(driver);
+        }
+
     }
 
 }
