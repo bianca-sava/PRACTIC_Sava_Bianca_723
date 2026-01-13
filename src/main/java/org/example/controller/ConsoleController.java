@@ -47,7 +47,7 @@ public class ConsoleController {
                 case "4" -> runEx4();
                 case "5" -> runEx5();
 //                case "6" -> runEx6();
-//                case "7" -> runEx7();
+                case "7" -> runEx7();
                 case "0" -> running = false;
                 default -> System.out.println("Invalid option.");
             }
@@ -101,6 +101,12 @@ public class ConsoleController {
     private void runEx5() {
         System.out.println("\n--- Ex 5 ---");
         raceEventService.printPoints();
+    }
+
+    private void runEx7() {
+        System.out.println("\n--- Ex 7 ---");
+
+        raceEventService.exportReport();
     }
 
 }
