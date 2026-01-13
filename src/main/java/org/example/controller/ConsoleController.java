@@ -45,7 +45,7 @@ public class ConsoleController {
                 case "2" -> runEx2();
                 case "3" -> runEx3();
                 case "4" -> runEx4();
-//                case "5" -> runEx5();
+                case "5" -> runEx5();
 //                case "6" -> runEx6();
 //                case "7" -> runEx7();
                 case "0" -> running = false;
@@ -96,6 +96,11 @@ public class ConsoleController {
     private void runEx4() {
         System.out.println("\n--- Ex 4 ---");
         driverService.exportDriversBySkill();
+    }
+
+    private void runEx5() {
+        System.out.println("\n--- Ex 5 ---");
+        raceEventService.printPoints();
     }
 
 }
