@@ -6,6 +6,9 @@ import org.example.model.DriverStatus;
 import org.example.repository.AbstractFileRepository;
 import org.example.repository.IRepository;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Comparator;
 import java.util.List;
 
@@ -27,4 +30,20 @@ public class DriverService extends AbstractService<Driver> {
                 .toList();
     }
 
+    public void exportDriversBySkill(){
+        List<Driver> sortedDrivers = sortBySkill();
+        StringBuilder sb = new StringBuilder();
+        for (Driver driver : sortedDrivers) {
+            sb.append(driver).append("\n");
+        }
+
+        try {
+            Files.write(Path.of("drivers_sorted.txt"), sb.toString().getBytes());
+            System.out.println("Saved in " + "drivers_sorted.txt");
+        } catch (IOException e) {
+            System.err.println("Error " + e.getMessage());
+        }
+
+
+    }
 }

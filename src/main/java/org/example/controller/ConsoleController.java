@@ -44,7 +44,7 @@ public class ConsoleController {
                 case "1" -> runEx1();
                 case "2" -> runEx2();
                 case "3" -> runEx3();
-//                case "4" -> runEx4();
+                case "4" -> runEx4();
 //                case "5" -> runEx5();
 //                case "6" -> runEx6();
 //                case "7" -> runEx7();
@@ -91,6 +91,11 @@ public class ConsoleController {
             System.out.println(driver);
         }
 
+    }
+
+    private void runEx4() {
+        System.out.println("\n--- Ex 4 ---");
+        driverService.exportDriversBySkill();
     }
 
 }
