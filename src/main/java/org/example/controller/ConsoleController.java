@@ -46,7 +46,7 @@ public class ConsoleController {
                 case "3" -> runEx3();
                 case "4" -> runEx4();
                 case "5" -> runEx5();
-//                case "6" -> runEx6();
+                case "6" -> runEx6();
                 case "7" -> runEx7();
                 case "0" -> running = false;
                 default -> System.out.println("Invalid option.");
@@ -103,8 +103,16 @@ public class ConsoleController {
         raceEventService.printPoints();
     }
 
+    public void runEx6() {
+        System.out.println("\n--- Ex 6 ---");
+        System.out.println("Top 5 Drivers:");
+
+        driverService.printRanking(raceEventService.getAll(), penaltyService.getAll(), raceEventService);
+    }
+
     private void runEx7() {
         System.out.println("\n--- Ex 7 ---");
+
 
         raceEventService.exportReport();
     }
