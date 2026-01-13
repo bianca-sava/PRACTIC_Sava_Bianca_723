@@ -63,6 +63,6 @@ public class Driver implements HasID{
 
     @Override
     public String toString() {
-        return "["+id+"] " + name + " ( " + team + ") - " + status + ", skill= " + skillLevel;
+        return "["+id+"] " + name + " ( " + team + " ) - " + status + ", skill= " + skillLevel;
     }
 }

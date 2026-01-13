@@ -6,6 +6,7 @@ import org.example.model.DriverStatus;
 import org.example.repository.AbstractFileRepository;
 import org.example.repository.IRepository;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class DriverService extends AbstractService<Driver> {
@@ -16,6 +17,13 @@ public class DriverService extends AbstractService<Driver> {
     public List<Driver> filterByTeamAndStatus(String team ) {
         return repository.getAll().stream()
                 .filter(driver -> driver.getTeam().equalsIgnoreCase(team) && driver.getStatus().equals(DriverStatus.ACTIVE))
+                .toList();
+    }
+
+    public List<Driver> sortBySkill(){
+        return repository.getAll().stream()
+                .sorted(Comparator.comparingInt(Driver::getSkillLevel).reversed()
+                        .thenComparing(Driver::getName))
                 .toList();
     }
 
